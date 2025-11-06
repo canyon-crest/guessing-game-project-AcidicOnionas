@@ -59,14 +59,7 @@ function play(){
         return;
     }
 
-    let firstChar = name.charAt(0);
-    if(firstChar >= 'a' && firstChar <= 'z'){
-        userName = firstChar.toUpperCase() + name.slice(1);
-    } else if(firstChar >= 'A' && firstChar <= 'Z'){
-        userName = name;
-    } else {
-        userName = name;
-    }
+    userName = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
     
     playBtn.disabled = true;
     guessBtn.disabled = false;
