@@ -1,16 +1,13 @@
-// Title Screen - Simple fade out
 startBtn.addEventListener("click", function(){
     titleScreen.style.display = "none";
     gameContent.style.display = "block";
 });
 
-// add javascript here
 date.textContent = time();
 setInterval(function(){
     date.textContent = time();
 }, 1000);
 
-// Set initial disabled button styles
 guessBtn.style.background = "#cccccc";
 guessBtn.style.color = "#666666";
 guessBtn.style.cursor = "not-allowed";
@@ -56,7 +53,6 @@ function getDaySuffix(day){
     }
 }
 function play(){
-    // Check if name is entered
     let name = nameInput.value.trim();
     if(name === ""){
         msg.textContent = "Please enter a valid name!";
@@ -69,7 +65,7 @@ function play(){
     } else if(firstChar >= 'A' && firstChar <= 'Z'){
         userName = name;
     } else {
-        userName = name; // If it's a number, just use as is
+        userName = name;
     }
     
     playBtn.disabled = true;
@@ -187,12 +183,10 @@ function updateTimers(endMs){
     gamesPlayed++;
     totalTime += elapsed;
     
-    // Update fastest time
     if(fastestTime === null || elapsed < fastestTime){
         fastestTime = elapsed;
     }
     
-    // Display times in seconds
     let fastestSeconds = (fastestTime / 1000).toFixed(2);
     let avgSeconds = (totalTime / gamesPlayed / 1000).toFixed(2);
     
