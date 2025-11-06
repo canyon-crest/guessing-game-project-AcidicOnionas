@@ -4,30 +4,48 @@
     <title>JavaScript Number Guessing Game</title>
     <script src="script.js" defer></script>
   </head>
-  <body>
-    <p id="date"></p>
+  <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh;">
+    <!-- Title Screen -->
+    <div id="titleScreen" style="text-align: center; padding-top: 150px;">
+      <h1 style="font-size: 60px; color: white; margin: 20px;">🎯 Number Guessing Game 🎯</h1>
+      <p style="font-size: 20px; color: white;">Can you guess the secret number?</p>
+      <button id="startBtn" style="font-size: 24px; padding: 15px 40px; margin-top: 20px; background: white; color: #667eea; border: none; border-radius: 10px; cursor: pointer; font-weight: bold;">START GAME</button>
+    </div>
 
-    <h3>Level</h3>
-    <input type="radio" name="level" id="e" value="3" checked><label for="e">Easy</label>
-    <input type="radio" name="level" id="m" value="10"><label for="m">Medium</label>
-    <input type="radio" name="level" id="h" value="100"><label for="h">Hard</label>
+    <!-- Game Content (hidden initially) -->
+    <div id="gameContent" style="display: none; padding: 20px; max-width: 800px; margin: 20px auto; background: white; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.2);">
+      <div style="text-align: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 15px; border-radius: 10px; margin-bottom: 20px;">
+        <p id="date" style="color: white; font-size: 18px; margin: 0;"></p>
+      </div>
 
-    <button id="playBtn">Play</button>
+      <h3 style="color: #667eea;">Enter Your Name</h3>
+      <input type="text" id="nameInput" placeholder="Type your name here" style="padding: 8px; font-size: 16px; border: 2px solid #667eea; border-radius: 5px; width: 250px;">
 
-    <h3 id="msg">Select a Level</h3>
-    <input type="text" id="guess">
-    <button id="guessBtn" disabled>Guess</button>
-    <button id="giveUp" disabled>Give Up</button>
+      <h3 style="color: #667eea;">Level</h3>
+      <input type="radio" name="level" id="e" value="3" checked><label for="e">Easy</label>
+      <input type="radio" name="level" id="m" value="10"><label for="m">Medium</label>
+      <input type="radio" name="level" id="h" value="100"><label for="h">Hard</label>
+      <br><br>
+      <button id="playBtn" style="padding: 10px 30px; font-size: 18px; background: #667eea; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">Play</button>
 
-    <h3>Stats</h3>
-    <p id="wins">Total wins: 0</p>
-    <p id="avgScore">Average Score: </p>
+      <h3 id="msg" style="color: #667eea;">Select a Level</h3>
+      <p id="temp" style="font-size: 20px; font-weight: bold; color: #764ba2;"></p>
+      <input type="text" id="guess" style="padding: 8px; font-size: 16px; border: 2px solid #667eea; border-radius: 5px; width: 150px;">
+      <button id="guessBtn" disabled style="padding: 10px 25px; font-size: 16px; border: none; border-radius: 8px;">Guess</button>
+      <button id="giveUpBtn" disabled style="padding: 10px 25px; font-size: 16px; border: none; border-radius: 8px;">Give Up</button>
 
-    <h3>Leaderboard</h3>
-    <ol>
-      <li name="leaderboard">100</li>
-      <li name="leaderboard">100</li>
-      <li name="leaderboard">100</li>
-    </ol>
+      <h3 style="color: #667eea;">Stats</h3>
+      <p id="wins">Total wins: 0</p>
+      <p id="avgScore">Average Score: </p>
+      <p id="fastest">Fastest Game: </p>
+      <p id="avgTime">Average Time: </p>
+
+      <h3 style="color: #667eea;">Leaderboard</h3>
+      <ol>
+        <li name="leaderboard">100</li>
+        <li name="leaderboard">100</li>
+        <li name="leaderboard">100</li>
+      </ol>
+    </div>
   </body>
 </html>
